@@ -79,6 +79,31 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Language toggle functionality
+const langButtons = document.querySelectorAll('.lang-btn');
+const langContents = document.querySelectorAll('.lang-content');
+
+langButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedLang = button.getAttribute('data-lang');
+        
+        // Update button states
+        langButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        button.classList.add('active');
+        
+        // Show/hide content based on selected language
+        langContents.forEach(content => {
+            if (content.classList.contains(`lang-${selectedLang}`)) {
+                content.style.display = 'block';
+            } else {
+                content.style.display = 'none';
+            }
+        });
+    });
+});
+
 // Tenant slider functionality
 document.querySelectorAll('.tenant-slider').forEach(slider => {
     const slides = slider.querySelectorAll('.tenant-image');
