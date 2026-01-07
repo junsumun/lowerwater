@@ -284,47 +284,6 @@ document.querySelectorAll('.property-slider').forEach(slider => {
         }
     });
     
-    // Touch/swipe functionality for mobile
-    let touchStartX = 0;
-    let touchEndX = 0;
-    let isDragging = false;
-    
-    function handleTouchStart(e) {
-        touchStartX = e.touches[0].clientX;
-        isDragging = true;
-    }
-    
-    function handleTouchMove(e) {
-        if (!isDragging) return;
-        touchEndX = e.touches[0].clientX;
-    }
-    
-    function handleTouchEnd() {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        const swipeThreshold = 50; // Minimum distance for a swipe
-        const diff = touchStartX - touchEndX;
-        
-        if (Math.abs(diff) > swipeThreshold) {
-            if (diff > 0) {
-                // Swipe left - next slide
-                nextSlide();
-            } else {
-                // Swipe right - previous slide
-                prevSlide();
-            }
-        }
-        
-        touchStartX = 0;
-        touchEndX = 0;
-    }
-    
-    // Add touch event listeners
-    slider.addEventListener('touchstart', handleTouchStart, { passive: true });
-    slider.addEventListener('touchmove', handleTouchMove, { passive: true });
-    slider.addEventListener('touchend', handleTouchEnd, { passive: true });
-    
     // Initialize
     showSlide(0);
 });
