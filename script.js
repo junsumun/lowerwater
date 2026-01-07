@@ -137,6 +137,119 @@ document.querySelectorAll('.tenant-slider').forEach(slider => {
         }
     }
     
+    function nextSlide(e) {
+        if (e) e.stopPropagation();
+        if (currentIndex < slides.length - 1) {
+            currentIndex++;
+            showSlide(currentIndex);
+        }
+    }
+    
+    function prevSlide(e) {
+        if (e) e.stopPropagation();
+        if (currentIndex > 0) {
+            currentIndex--;
+            showSlide(currentIndex);
+        }
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+    
+    // Keyboard navigation for slider
+    slider.setAttribute('tabindex', '0');
+    slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            prevSlide();
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            nextSlide();
+        }
+    });
+    
+    // Initialize
+    showSlide(0);
+});
+
+// Property slider functionality
+document.querySelectorAll('.property-slider').forEach(slider => {
+    const slides = slider.querySelectorAll('.property-slide-image');
+    const prevBtn = slider.querySelector('.property-slider-prev');
+    const nextBtn = slider.querySelector('.property-slider-next');
+    const dotsContainer = slider.querySelector('.property-slider-dots');
+    
+    if (slides.length <= 1) {
+        // Hide buttons and dots if only one image
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (dotsContainer) dotsContainer.style.display = 'none';
+        return;
+    }
+    
+    let currentIndex = 0;
+    
+    // Create dots
+    if (dotsContainer) {
+        slides.forEach((_, index) => {
+            const dot = document.createElement('button');
+            dot.classList.add('property-slider-dot');
+            if (index === 0) dot.classList.add('active');
+            dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showSlide(currentIndex);
+            });
+            dotsContainer.appendChild(dot);
+        });
+    }
+    
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.property-slider-dot') : [];
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.classList.add('active');
+            } else {
+                slide.classList.remove('active');
+            }
+        });
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+        
+        // Update button visibility
+        if (prevBtn) {
+            if (index === 0) {
+                // First image: hide left button
+                prevBtn.style.display = 'none';
+            } else {
+                // Show left button
+                prevBtn.style.display = 'flex';
+            }
+        }
+        if (nextBtn) {
+            if (index === slides.length - 1) {
+                // Last image: hide right button
+                nextBtn.style.display = 'none';
+            } else {
+                // Show right button
+                nextBtn.style.display = 'flex';
+            }
+        }
+    }
+    
     function nextSlide() {
         if (currentIndex < slides.length - 1) {
             currentIndex++;

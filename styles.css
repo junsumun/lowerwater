@@ -373,9 +373,17 @@ section {
     margin: 0;
 }
 
+.portfolio-property-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
 .portfolio-property {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .portfolio-image {
@@ -406,10 +414,19 @@ section {
 }
 
 .property-address {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.3px;
     margin: 0;
+}
+
+.property-location {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    opacity: 0.7;
+    margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .property-date {
@@ -422,8 +439,8 @@ section {
 }
 
 .property-tenants {
-    margin-top: 40px;
-    padding-top: 40px;
+    margin-top: 20px;
+    padding-top: 20px;
     border-top: 1px solid rgba(24, 21, 21, 0.1);
     display: flex;
     flex-direction: column;
@@ -604,6 +621,282 @@ section {
     margin-top: 24px;
 }
 
+/* Property Detail Page */
+.property-detail {
+    margin-top: 82px;
+    padding: 100px 0;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--black);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    transition: opacity 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.back-link:hover {
+    opacity: 0.6;
+}
+
+.back-link:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* Property Content Wrapper */
+.property-content-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Property Slider */
+.property-slider-container {
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%;
+}
+
+.property-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 5px;
+    outline: none;
+}
+
+.property-slider:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.property-slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+
+.property-slide-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: block;
+}
+
+.property-slide-image.active {
+    opacity: 1;
+}
+
+.property-slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(24, 21, 21, 0.2);
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    opacity: 1;
+    outline: none;
+    padding: 0;
+}
+
+.property-slider-btn:focus-visible {
+    opacity: 1;
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+.property-slider-btn:hover {
+    background: var(--white);
+    border-color: var(--black);
+}
+
+.property-slider-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.property-slider-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.property-slider-prev {
+    left: 16px;
+}
+
+.property-slider-next {
+    right: 16px;
+}
+
+.property-slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+    align-items: center;
+}
+
+.property-slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(24, 21, 21, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+    outline: none;
+}
+
+.property-slider-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.property-slider-dot.active {
+    background: var(--white);
+    border-color: var(--black);
+}
+
+.property-slider-dot:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 2px;
+}
+
+/* Property Detail Info */
+.property-detail-info {
+    flex: 0 0 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.property-address {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    color: var(--black);
+}
+
+.property-location {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    opacity: 0.7;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.3px;
+    line-height: 1.5;
+}
+
+.property-date {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    opacity: 0.7;
+    margin: 0 0 16px 0;
+    letter-spacing: 0.5px;
+    line-height: 1.5;
+}
+
+.property-description {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--black);
+    margin: 0 0 32px 0;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+}
+
+.property-detail-info .property-tenants-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--black);
+    margin: 24px 0 12px 0;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+}
+
+.property-detail-info .property-tenants {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(24, 21, 21, 0.1);
+}
+
+.property-detail-info .property-tenant {
+    display: flex;
+    align-items: center;
+}
+
+.property-detail-info .property-tenant-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--black);
+    transition: opacity 0.3s ease;
+}
+
+.property-detail-info .property-tenant-link:hover {
+    opacity: 0.6;
+}
+
+.property-detail-info .property-tenant-link:focus-visible {
+    outline: 2px solid var(--black);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.property-detail-info .property-tenant-name {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+}
+
+.property-detail-info .property-tenant-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.property-detail-info .property-tenant-link:hover .property-tenant-icon {
+    opacity: 1;
+}
+
 /* Footer */
 .footer {
     padding: 40px 0;
@@ -718,6 +1011,100 @@ section {
         aspect-ratio: 1 / 1;
     }
 
+    .property-detail {
+        padding: 60px 0;
+    }
+
+    .back-link {
+        margin-bottom: 30px;
+    }
+
+    .property-content-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .property-slider-container {
+        flex: 1 1 100%;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .property-slider {
+        width: 100%;
+        aspect-ratio: 4 / 3;
+        min-height: 0;
+    }
+
+    .property-detail-info {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .property-address {
+        font-size: 16px;
+    }
+
+    .property-location {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .property-date {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .property-description {
+        font-size: 13px;
+        margin-bottom: 24px;
+    }
+
+    .property-detail-info .property-tenants-title {
+        font-size: 15px;
+        margin: 20px 0 10px 0;
+    }
+
+    .property-detail-info .property-tenants {
+        gap: 12px;
+        margin-top: 0;
+        padding-top: 16px;
+    }
+
+    .property-detail-info .property-tenant-name {
+        font-size: 13px;
+    }
+
+    .property-detail-info .property-tenant-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .property-slider-btn {
+        opacity: 1;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+    }
+
+    .property-slider-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .property-slider-prev {
+        left: 12px;
+    }
+
+    .property-slider-next {
+        right: 12px;
+    }
+
+    .property-slider-dots {
+        bottom: 16px;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -746,6 +1133,10 @@ section {
     }
 
     .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .property-address {
         font-size: 16px;
     }
 }
