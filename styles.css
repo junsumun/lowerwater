@@ -671,6 +671,8 @@ section {
     overflow: hidden;
     border-radius: 5px;
     outline: none;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
 }
 
 .property-slider:focus-visible {
