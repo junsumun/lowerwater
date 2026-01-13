@@ -5,7 +5,7 @@
 }
 
 :root {
-    --black: #181515;
+    --black: #1A1A1A;
     --white: #FAFAF8;
 }
 
@@ -413,9 +413,9 @@ section {
     gap: 8px;
 }
 
-.property-address {
-    font-size: 16px;
-    font-weight: 500;
+.property-info .property-address {
+    font-size: 14px;
+    font-weight: 400;
     letter-spacing: -0.3px;
     margin: 0;
 }
@@ -798,7 +798,7 @@ section {
     gap: 0;
 }
 
-.property-address {
+.property-detail-info .property-address {
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.3px;
@@ -978,8 +978,8 @@ section {
         gap: 40px;
     }
 
-    .property-address {
-        font-size: 18px;
+    .property-info .property-address {
+        font-size: 14px;
     }
 
     .property-date {
@@ -1041,7 +1041,7 @@ section {
         width: 100%;
     }
 
-    .property-address {
+    .property-detail-info .property-address {
         font-size: 16px;
     }
 
@@ -1136,7 +1136,7 @@ section {
         font-size: 16px;
     }
 
-    .property-address {
+    .property-info .property-address {
         font-size: 16px;
     }
 }
