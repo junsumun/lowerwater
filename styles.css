@@ -5,7 +5,7 @@
 }
 
 :root {
-    --black: #1A1A1A;
+    --black: #1d1d1f;
     --white: #FAFAF8;
 }
 
@@ -18,7 +18,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    --nav-offset: 56px;
+    --nav-offset: 48px;
     scroll-padding-top: var(--nav-offset);
 }
 
@@ -149,7 +149,7 @@ body {
     color: var(--black);
     text-decoration: none;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.3px;
     transition: opacity 0.3s ease;
     display: flex;
@@ -204,7 +204,7 @@ body {
     color: var(--black);
     text-decoration: none;
     font-weight: 400;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.3px;
     display: block;
     padding: 20px 0;
@@ -916,7 +916,7 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        --nav-offset: 56px;
+        --nav-offset: 48px;
     }
 
     body.menu-open {
@@ -1108,7 +1108,7 @@ section {
 
 @media (max-width: 480px) {
     body {
-        --nav-offset: 52px;
+        --nav-offset: 44px;
     }
 
     .nav-brand h1 {
