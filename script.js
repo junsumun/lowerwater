@@ -56,7 +56,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            const navbarHeight = 82;
+            const navbarHeight = document.querySelector('.navbar')?.getBoundingClientRect().height ?? 0;
             const offsetTop = target.offsetTop - navbarHeight;
             window.scrollTo({
                 top: Math.max(0, offsetTop),
@@ -64,19 +64,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Add scroll effect to navbar
-const navbar = document.querySelector('.navbar');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
 });
 
 // Language toggle functionality
