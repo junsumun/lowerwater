@@ -18,7 +18,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
-    scroll-padding-top: 82px;
+    --nav-offset: 82px;
+    scroll-padding-top: var(--nav-offset);
 }
 
 /* Skip to main content link for accessibility */
@@ -166,10 +167,7 @@ body {
 /* Mobile Menu Overlay */
 .mobile-menu-overlay {
     position: fixed;
-    top: 82px;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-color: var(--white);
     z-index: 999;
     transform: translateX(100%);
@@ -182,7 +180,7 @@ body {
 }
 
 .mobile-menu {
-    padding: 20px 40px 40px;
+    padding: calc(var(--nav-offset) + 20px) 40px 40px;
     max-width: 100%;
 }
 
@@ -913,7 +911,7 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        scroll-padding-top: 70px;
+        --nav-offset: 70px;
     }
 
     body.menu-open {
@@ -936,12 +934,8 @@ section {
         font-size: 16px;
     }
 
-    .mobile-menu-overlay {
-        top: 70px;
-    }
-
     .mobile-menu {
-        padding: 20px 24px 40px;
+        padding: calc(var(--nav-offset) + 20px) 24px 40px;
     }
 
     .hero {
@@ -1109,7 +1103,7 @@ section {
 
 @media (max-width: 480px) {
     body {
-        scroll-padding-top: 60px;
+        --nav-offset: 60px;
     }
 
     .nav-brand h1 {
