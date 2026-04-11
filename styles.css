@@ -425,22 +425,12 @@ section {
 }
 
 .property-info .property-address {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    letter-spacing: -0.3px;
     margin: 0;
 }
 
 .property-location {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--black);
-    opacity: 0.7;
-    margin: 0;
-    letter-spacing: 0.5px;
-}
-
-.property-date {
     font-size: 14px;
     font-weight: 400;
     color: var(--black);
@@ -810,32 +800,45 @@ section {
 }
 
 .property-detail-info .property-address {
-    font-size: 16px;
+    text-transform: uppercase;
+    font-size: 24px;
     font-weight: 500;
-    letter-spacing: -0.3px;
     margin: 0 0 8px 0;
     line-height: 1.2;
-    color: var(--black);
+    letter-spacing: 1px;
 }
 
 .property-location {
     font-size: 14px;
     font-weight: 400;
-    color: var(--black);
-    opacity: 0.7;
+    opacity: 1;
     margin: 0 0 16px 0;
-    letter-spacing: 0.3px;
     line-height: 1.5;
 }
 
-.property-date {
-    font-size: 14px;
-    font-weight: 400;
-    color: var(--black);
-    opacity: 0.7;
+.property-detail-info .property-location {
+    margin-bottom: 28px;
+}
+
+.property-detail-info .property-detail-facts {
     margin: 0 0 16px 0;
-    letter-spacing: 0.5px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.property-detail-info .property-fact {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--black);
+    margin: 0;
     line-height: 1.5;
+    letter-spacing: 0.2px;
+    opacity: 0.7;
+}
+
+.property-detail-info .property-fact-value {
+    font-weight: 300;
 }
 
 .property-description {
@@ -891,8 +894,9 @@ section {
 
 .property-detail-info .property-tenant-name {
     font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.2px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    opacity: 0.7;
     line-height: 1.5;
 }
 
@@ -987,11 +991,8 @@ section {
     }
 
     .property-info .property-address {
-        font-size: 14px;
-    }
-
-    .property-date {
-        font-size: 13px;
+        font-size: 12px;
+        font-weight: 400;
     }
 
     .property-tenants {
@@ -1050,7 +1051,12 @@ section {
     }
 
     .property-detail-info .property-address {
-        font-size: 16px;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
     }
 
     .property-location {
@@ -1058,9 +1064,8 @@ section {
         margin-bottom: 12px;
     }
 
-    .property-date {
-        font-size: 13px;
-        margin-bottom: 12px;
+    .property-detail-info .property-location {
+        margin-bottom: 22px;
     }
 
     .property-description {
@@ -1145,7 +1150,16 @@ section {
     }
 
     .property-info .property-address {
-        font-size: 16px;
+        font-size: 12px;
+        font-weight: 400;
+    }
+    .property-detail-info .property-address {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: 500;
+        margin: 0 0 8px 0;
+        line-height: 1.2;
+        letter-spacing: 1px;
     }
 }
 
